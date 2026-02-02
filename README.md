@@ -9,3 +9,8 @@ This repository demonstrates a complete workflow for designing and evolving a re
 * **Data Integrity & Defaults:** * Implementing **Default Constraints** to ensure consistent data entry.
     * Enforcing **Primary & Foreign Keys** for robust relational mapping.
     * Applying **NOT NULL** and **UNIQUE** constraints to maintain high data quality.
+
+
+ ## Related Projects
+- 🔗 SQL Employee Database Analysis  
+  https://github.com/nonyeobi-stack/SQL-Employee-Database-Analysis
