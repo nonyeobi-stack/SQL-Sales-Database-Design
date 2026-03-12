@@ -62,41 +62,13 @@ CREATE TABLE products
   warehouse_id INT
 );
 
--- Adding and Dropping foreign key to an already created sales table --
-
-DROP TABLE sales;
-
-CREATE TABLE sales 
-(
-  purchase_number INT AUTO_INCREMENT,
-  date_of_purchase DATE,
-  customer_id INT,
-  item_code VARCHAR(10),
-PRIMARY KEY (purchase_number)
-);
-
-ALTER TABLE sales
-ADD FOREIGN KEY (customer_id) REFERENCES customers (customer_id)
-ON DELETE CASCADE;
-
-ALTER TABLE sales
-DROP FOREIGN KEY sales_Ibfk_1;
-
--- Dropping the Unique Key on customers table --
-
-ALTER TABLE customers
-DROP INDEX email_address;
-
--- Adding a default value to a column in customers table and dropping it --
+-- Adding a default value to a column in customers table --
 
 ALTER TABLE customers
 CHANGE COLUMN number_of_complaints 
 number_of_complaints INT DEFAULT 0;
 
-ALTER TABLE customers
-ALTER COLUMN nunber_of_complaints DROP DEFAULT;
-
--- Adding a Not Null constraints while creating companies table and Dropping it --
+-- Adding a Not Null constraints while creating companies table --
 
 CREATE TABLE companies 
 (
@@ -105,9 +77,6 @@ CREATE TABLE companies
   company_name VARCHAR(100) NOT NULL,
 PRIMARY KEY (company_id)
 );
-
-ALTER TABLE companies 
-MODIFY company_name VARCHAR(100) NULL;
 
 -- Changing the Null to Not Null constraints using the Alter Statement --
 
